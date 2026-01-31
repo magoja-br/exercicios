@@ -2,160 +2,289 @@
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Protocolo de Exercícios: FE 38% e Fibrose</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+    <title>Summa Vitalis - Protocolo de Recuperação Miocárdica e Longevidade</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Lora:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
     <style>
-        body { font-family: 'Inter', sans-serif; }
+        :root {
+            --parchment: #fcfaf2;
+            --ink: #1a1a1a;
+            --gold: #b8860b;
+            --crimson: #8b0000;
+            --shadow: rgba(0, 0, 0, 0.1);
+        }
+
+        * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+
+        html, body {
+            overflow-x: hidden;
+            width: 100%;
+            margin: 0;
+            padding: 0;
+            background-color: #e5e5e5;
+        }
+
+        body {
+            color: var(--ink);
+            font-family: 'Lora', serif;
+            display: flex;
+            justify-content: center;
+        }
+
+        .manuscript {
+            background-color: var(--parchment);
+            width: 95%;
+            max-width: 900px;
+            margin: 20px auto;
+            padding: 5% 7%;
+            box-shadow: 0 10px 30px var(--shadow);
+            border: 1px solid #d3d3d3;
+            position: relative;
+            word-wrap: break-word;
+        }
+
+        .manuscript::before {
+            content: "";
+            position: absolute;
+            top: 10px; left: 10px; right: 10px; bottom: 10px;
+            border: 1px solid #e0d8c0;
+            pointer-events: none;
+        }
+
+        header { text-align: center; margin-bottom: 40px; position: relative; z-index: 1; }
+
+        h1 {
+            font-family: 'Cinzel', serif;
+            font-size: clamp(1.4rem, 4vw, 2.2rem);
+            color: var(--crimson);
+            margin-bottom: 10px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .subtitle {
+            font-family: 'Playfair Display', serif;
+            font-style: italic;
+            font-size: clamp(0.9rem, 3vw, 1.1rem);
+            color: var(--gold);
+            margin-bottom: 20px;
+            font-weight: bold;
+        }
+
+        .dropcap {
+            float: left;
+            font-family: 'Cinzel', serif;
+            font-size: 4rem;
+            line-height: 0.8;
+            padding-top: 10px;
+            padding-right: 10px;
+            color: var(--crimson);
+        }
+
+        h2 {
+            font-family: 'Cinzel', serif;
+            font-size: clamp(1.1rem, 4vw, 1.4rem);
+            border-bottom: 2px solid var(--gold);
+            padding-bottom: 10px;
+            margin-top: 40px;
+            color: var(--crimson);
+            text-align: center;
+            text-transform: uppercase;
+        }
+
+        h3 {
+            font-family: 'Playfair Display', serif;
+            color: var(--crimson);
+            margin-top: 30px;
+            font-size: clamp(1rem, 3.5vw, 1.25rem);
+            font-weight: bold;
+        }
+
+        h4 {
+            font-family: 'Cinzel', serif;
+            color: var(--ink);
+            margin-top: 20px;
+            font-size: 1rem;
+            border-left: 3px solid var(--gold);
+            padding-left: 10px;
+        }
+
+        p {
+            font-size: clamp(1rem, 2.5vw, 1.1rem);
+            line-height: 1.8;
+            text-align: justify;
+            margin-bottom: 20px;
+            hyphens: auto;
+        }
+
+        ul { margin-bottom: 20px; padding-left: 20px; }
+        li { margin-bottom: 12px; line-height: 1.6; list-style-type: square; }
+        strong { color: var(--crimson); }
+
+        .callout {
+            background-color: rgba(184, 134, 11, 0.1);
+            border: 1px solid var(--gold);
+            padding: 20px;
+            margin: 20px 0;
+            font-style: italic;
+            border-radius: 5px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            font-size: 0.9rem;
+        }
+
+        th, td { border: 1px solid #d3d3d3; padding: 12px; text-align: left; }
+        th { background-color: #f2f2f2; font-family: 'Cinzel', serif; color: var(--crimson); }
+
+        .checklist { list-style: none; padding-left: 0; }
+        .checklist li { border-bottom: 1px dashed var(--gold); padding: 10px 0; }
+
+        .footer {
+            margin-top: 60px;
+            text-align: center;
+            font-family: 'Cinzel', serif;
+            font-size: 0.8rem;
+            color: #999;
+            letter-spacing: 3px;
+            padding-bottom: 20px;
+        }
+
+        @media (max-width: 480px) {
+            .manuscript { padding: 40px 20px; }
+            .dropcap { font-size: 3rem; }
+        }
     </style>
 </head>
-<body class="bg-gray-50 text-gray-900 antialiased">
+<body>
 
-    <header class="bg-blue-900 text-white py-12 shadow-md">
-        <div class="max-w-4xl mx-auto px-6">
-            <h1 class="text-3xl md:text-4xl font-extrabold mb-4">
-                Protocolo de Exercícios: FE 38% e Fibrose Miocárdica
-            </h1>
-            <div class="bg-blue-800 p-6 rounded-lg border-l-4 border-blue-400">
-                <p class="text-lg leading-relaxed text-blue-50">
-                    <strong>Objetivo e Estratégia Principal:</strong> Para pacientes com <strong>FE de 38% e fibrose miocárdica</strong>, o objetivo é o aumento de massa muscular priorizando a segurança cardiovascular e a hipertrofia periférica. A regra fundamental é gerar tensão mecânica isolada sem causar picos de pressão no coração.
-                </p>
-            </div>
-        </div>
+<article class="manuscript">
+    <header>
+        <h1>SUMMA VITALIS</h1>
+        <div class="subtitle">Protocolo para Homem (72 anos, 1,80m, 84kg) com FE 38-42% e Fibrose Miocárdica</div>
     </header>
 
-    <main class="max-w-4xl mx-auto px-6 py-10">
+    <div class="callout">
+        <strong>Objetivo e Estratégia Principal:</strong> O aumento de massa muscular deve priorizar a segurança cardiovascular e a hipertrofia periférica. A regra fundamental é gerar tensão mecânica isolada para fortalecer o sistema periférico, poupando o motor central (coração).
+    </div>
 
-        <section class="mb-12">
-            <h2 class="text-2xl font-bold text-blue-900 mb-8 border-b pb-2 flex items-center">
-                <span class="mr-2">1.</span> Guia de Exercícios
-            </h2>
+    <h2>MÓDULO I: NUTRIÇÃO ESTRATÉGICA</h2>
+    <p><span class="dropcap">O</span> foco nutricional reside em reduzir o esforço das artérias e otimizar a síntese proteica para combater a resistência anabólica típica da idade, mantendo o peso enquanto troca gordura por músculo.</p>
 
-            <div class="mb-10">
-                <h3 class="text-xl font-bold text-gray-800 mb-4 uppercase tracking-wider text-sm bg-gray-200 inline-block px-3 py-1 rounded">
-                    Membros Inferiores (Foco Principal)
-                </h3>
-                <p class="text-gray-600 mb-6 italic">
-                    Como as pernas possuem grandes massas musculares, a regra de ouro é trabalhá-las <strong>unilateralmente (uma de cada vez)</strong> para evitar sobrecarga cardíaca.
-                </p>
+    <h3>1.1. Otimização Proteica (Meta: 126g)</h3>
+    <ul>
+        <li><strong>Distribuição Fracionada:</strong> É necessário fracionar em <strong>30g por refeição</strong> (3 a 4 vezes ao dia) para ativar o processo de construção muscular.</li>
+        <li><strong>Fontes de Alta Qualidade:</strong> Priorize ovos, peixes e carnes magras. O <strong>Whey Protein</strong> é um aliado excelente para rápida absorção e alcance da meta.</li>
+    </ul>
 
-                <div class="grid gap-6">
-                    <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100">
-                        <h4 class="font-bold text-blue-700 text-lg mb-2 underline decoration-blue-200">Extensão de Joelhos (Cadeira Extensora)</h4>
-                        <p class="mb-2"><strong>Como:</strong> Sentado, estenda uma perna até alinhar, segure por 2 segundos e desça lentamente.</p>
-                        <p class="text-sm text-gray-500"><strong>Por que:</strong> Este é o exercício mais seguro para isolar o quadríceps sem aumentar a pressão abdominal.</p>
-                    </div>
+    <h3>1.2. Proteção Vascular e Controle Hídrico</h3>
+    <ul>
+        <li><strong>Nitritos Naturais:</strong> Beterraba e folhas escuras ajudam a dilatar as artérias, facilitando o trabalho cardíaco.</li>
+        <li><strong>Rigor com o Sódio:</strong> Devido ao uso de Furosemida e Entresto, evite embutidos e conservas que favorecem o inchaço e o endurecimento arterial.</li>
+        <li><strong>Hidratação:</strong> Beba pequenos goles durante o treino para manter a boca úmida, sem exceder a cota diária total recomendada.</li>
+    </ul>
 
-                    <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100">
-                        <h4 class="font-bold text-blue-700 text-lg mb-2 underline decoration-blue-200">Agachamento Parcial (Sentar e Levantar)</h4>
-                        <p class="mb-2"><strong>Como:</strong> Utilize uma cadeira alta. Desça o quadril lentamente até encostar e suba imediatamente (use as mãos para apoio se necessário).</p>
-                        <p class="text-sm text-gray-500"><strong>Por que:</strong> Este movimento mimetiza funções diárias e fortalece glúteos e coxas.</p>
-                    </div>
+    <h2>MÓDULO II: GUIA DE EXERCÍCIOS (A "SEGUNDA BOMBA")</h2>
+    <p>Com FE de 38-42%, o exercício é um "segundo remédio". Músculos fortes facilitam o retorno venoso e diminuem o esforço do coração.</p>
 
-                    <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100">
-                        <h4 class="font-bold text-blue-700 text-lg mb-2 underline decoration-blue-200">Elevação de Panturrilha (Bomba de Sóleo)</h4>
-                        <p class="mb-2"><strong>Como:</strong> Em pé e apoiado em um balcão, suba na ponta dos pés.</p>
-                        <p class="text-sm text-gray-500"><strong>Por que:</strong> Este exercício é crucial para o retorno venoso e para diminuir o inchaço nas pernas causado pela Insuficiência Cardíaca (IC).</p>
-                    </div>
-                </div>
-            </div>
+    <h3>2.1. Membros Inferiores (Trabalho Unilateral)</h3>
+    <p><em>Regra de Ouro: Trabalhar uma perna de cada vez para evitar sobrecarga cardíaca súbita.</em></p>
+    
+    <h4>Extensão de Joelhos (Cadeira Extensora)</h4>
+    <p>Sentado, estenda uma perna até alinhar, segure 2s e desça lentamente. O modo mais seguro de isolar o quadríceps sem pressão abdominal.</p>
 
-            <div class="mb-10">
-                <h3 class="text-xl font-bold text-gray-800 mb-4 uppercase tracking-wider text-sm bg-gray-200 inline-block px-3 py-1 rounded">
-                    Membros Superiores (Autonomia e Postura)
-                </h3>
-                <p class="text-gray-600 mb-6 italic">O foco é facilitar atividades cotidianas e melhorar a respiração.</p>
+    <h4>Agachamento Parcial (Sentar e Levantar)</h4>
+    <p>Utilize uma cadeira alta. Desça lentamente até encostar e suba imediatamente. Essencial para autonomia diária.</p>
 
-                <div class="grid gap-6">
-                    <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100">
-                        <h4 class="font-bold text-blue-700 text-lg mb-2 underline decoration-blue-200">Bíceps com Halteres ou Elásticos</h4>
-                        <p class="mb-2"><strong>Como:</strong> Realize sentado para maior estabilidade da pressão arterial, dobrando o cotovelo e trazendo o peso ao ombro (um braço de cada vez).</p>
-                        <p class="text-sm text-gray-500"><strong>Por que:</strong> Braços fortes ajudam a carregar objetos leves sem causar ofegância.</p>
-                    </div>
+    <h4>Elevação de Panturrilha (Bomba de Sóleo)</h4>
+    <p>Em pé, apoiado, suba na ponta dos pés. Crucial para o retorno venoso e redução de inchaço.</p>
 
-                    <div class="bg-white p-6 rounded-xl shadow-sm border border-red-50">
-                        <h4 class="font-bold text-blue-700 text-lg mb-2 underline decoration-blue-200">Desenvolvimento de Ombros (Limitado)</h4>
-                        <p class="mb-2"><strong>Como:</strong> Eleve os braços lateralmente apenas até a altura dos ombros.</p>
-                        <div class="mt-3 p-3 bg-red-50 border border-red-200 text-red-700 rounded text-sm">
-                            <strong>Atenção:</strong> Jamais eleve pesos acima da linha da cabeça, pois isso aumenta drasticamente a pós-carga (trabalho do coração).
-                        </div>
-                    </div>
+    <h3>2.2. Membros Superiores (Autonomia e Postura)</h3>
+    
+    <h4>Bíceps com Halteres</h4>
+    <p>Realize <strong>sentado</strong> para estabilidade da pressão, um braço de cada vez.</p>
 
-                    <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100">
-                        <h4 class="font-bold text-blue-700 text-lg mb-2 underline decoration-blue-200">Puxada com Elástico (Simulando Remada)</h4>
-                        <p class="mb-2"><strong>Como:</strong> Prenda o elástico em uma maçaneta e puxe em direção ao abdômen, fechando as escápulas.</p>
-                        <p class="text-sm text-gray-500"><strong>Por que:</strong> Isso melhora a postura das costas e auxilia na expansão pulmonar.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
+    <h4>Desenvolvimento Lateral (Limitado)</h4>
+    <p>Eleve os braços apenas até a altura dos ombros. <strong>Jamais eleve pesos acima da linha da cabeça</strong>, pois isso aumenta drasticamente a carga sobre o coração.</p>
 
-        <section class="mb-12 bg-white rounded-2xl p-8 border border-gray-200 shadow-sm">
-            <h2 class="text-2xl font-bold text-blue-900 mb-6 flex items-center">
-                <span class="mr-2">2.</span> A "Fórmula" de Execução (Como Treinar)
-            </h2>
-            <p class="text-gray-700 mb-6 font-medium">Para gerar hipertrofia e não apenas cansaço, siga rigorosamente este método:</p>
-            
-            <ul class="space-y-6">
-                <li class="flex items-start">
-                    <span class="h-6 w-6 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center mr-3 mt-1 text-xs font-bold">L</span>
-                    <div>
-                        <strong>Fase Excêntrica Lenta:</strong> O segredo é segurar a descida do peso por 3 a 4 segundos. Isso gera microlesões musculares benéficas com menos esforço para o coração.
-                    </div>
-                </li>
-                <li class="flex items-start">
-                    <span class="h-6 w-6 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center mr-3 mt-1 text-xs font-bold">V</span>
-                    <div>
-                        <strong>Volume de Repetições:</strong> Mantenha entre 8 a 12 repetições. Menos de 6 indica carga excessiva; mais de 15 indica carga muito leve.
-                    </div>
-                </li>
-                <li class="flex items-start">
-                    <span class="h-6 w-6 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center mr-3 mt-1 text-xs font-bold">D</span>
-                    <div>
-                        <strong>Descanso Amplo:</strong> Descanse de 2 a 3 minutos entre séries. Embora o músculo recupere em 1 minuto, o coração com fibrose necessita de 3 minutos para estabilizar o volume sanguíneo.
-                    </div>
-                </li>
-                <li class="flex items-start">
-                    <span class="h-6 w-6 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center mr-3 mt-1 text-xs font-bold">H</span>
-                    <div>
-                        <strong>Hidratação:</strong> Beba pequenos goles para manter a boca úmida, cuidando para não exceder a cota diária de líquidos.
-                    </div>
-                </li>
-            </ul>
-        </section>
+    <h4>Puxada/Remada com Elástico</h4>
+    <p>Puxe em direção ao abdômen fechando as escápulas. Melhora a postura e auxilia na expansão pulmonar.</p>
 
-        <section class="bg-red-50 rounded-2xl p-8 border border-red-200">
-            <h2 class="text-2xl font-bold text-red-800 mb-6 flex items-center">
-                <span class="mr-2">3.</span> O que NÃO Fazer (Contraindicações)
-            </h2>
-            <p class="text-red-900 mb-6 font-semibold underline decoration-red-300">Evite práticas que causem risco de descompensação:</p>
-            
-            <ul class="space-y-4">
-                <li class="flex items-start bg-white/50 p-4 rounded-lg">
-                    <svg class="h-6 w-6 text-red-500 mr-3 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
-                    </svg>
-                    <div>
-                        <strong class="text-red-800">Exercícios Isométricos Longos:</strong> Evite "pranchas" ou segurar pesos parados. A tensão estática "tranca" a circulação e eleva a pressão arterial rapidamente.
-                    </div>
-                </li>
-                <li class="flex items-start bg-white/50 p-4 rounded-lg">
-                    <svg class="h-6 w-6 text-red-500 mr-3 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
-                    </svg>
-                    <div>
-                        <strong class="text-red-800">Caminhadas em Subidas:</strong> Exigem muito débito cardíaco. Dê preferência a caminhadas no plano ou ao treino de força sentado.
-                    </div>
-                </li>
-            </ul>
-        </section>
+    <h2>MÓDULO III: A "FÓRMULA" DE EXECUÇÃO</h2>
+    <ul>
+        <li><strong>Fase Excêntrica Lenta:</strong> Segure a descida do peso por 3 a 4 segundos. Gera hipertrofia com menos esforço cardíaco.</li>
+        <li><strong>Volume:</strong> 8 a 12 repetições por série. Realize de 1 a 3 séries conforme disposição.</li>
+        <li><strong>Descanso Amplo:</strong> Descanse de <strong>2 a 3 minutos</strong> entre séries para estabilizar o volume sanguíneo.</li>
+        <li><strong>Escala de Fala:</strong> Mantenha o ritmo onde consiga falar frases curtas sem ficar ofegante.</li>
+    </ul>
 
-    </main>
+    <h2>MÓDULO IV: PROTEÇÃO DA COLUNA E SEGURANÇA</h2>
+    <h3>4.1. Blindagem Lombar</h3>
+    <ul>
+        <li><strong>A Regra da Não-Extensão:</strong> Evite movimentos que "arqueiem" a lombar para trás (ex: olhar excessivamente para cima ou nado crawl).</li>
+        <li><strong>Manobra de Bracing:</strong> Contraia levemente o abdômen ("travar o core") antes de qualquer esforço.</li>
+        <li><strong>Mobilidade do Gato:</strong> Realize ao despertar para lubrificar as articulações e aliviar a rigidez.</li>
+    </ul>
 
-    <footer class="text-center py-10 text-gray-400 text-sm border-t mt-10">
-        <p>Documento de Orientação para Reabilitação Muscular Cardiovascular</p>
-    </footer>
+    <h3>4.2. Contraindicações Críticas</h3>
+    <ul>
+        <li><strong>Isometria Longa:</strong> Proibido pranchas ou segurar pesos parados; isso eleva a pressão arterial rapidamente.</li>
+        <li><strong>Manobra de Valsalva:</strong> <strong>Nunca prenda a respiração</strong>. Expire na fase de força.</li>
+        <li><strong>Caminhadas em Subidas:</strong> Exigem muito débito cardíaco. Prefira plano ou treino de força.</li>
+    </ul>
+
+    <h2>MÓDULO V: FARMACOLOGIA E ALERTAS</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Medicamento</th>
+                <th>Observação no Treino</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><strong>Metoprolol</strong></td>
+                <td>Trava os batimentos. Use o cansaço (Escala de Fala) como guia, não a frequência.</td>
+            </tr>
+            <tr>
+                <td><strong>Entresto / Anlodipino</strong></td>
+                <td>Risco de queda de pressão. Levante-se devagar; aguarde 1 minuto após deitar.</td>
+            </tr>
+            <tr>
+                <td><strong>Diazepam / Quetiapina</strong></td>
+                <td>Afetam o equilíbrio. Treine sempre próximo a apoios fixos.</td>
+            </tr>
+            <tr>
+                <td><strong>Puran T4</strong></td>
+                <td>Deve ser a primeira ação do dia, estritamente em jejum.</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h3>Sinais de Alerta (Pare Imediatamente)</h3>
+    <ul>
+        <li><strong>Peso Súbito:</strong> Ganho de 2kg em 48h (sinal de acúmulo de líquido).</li>
+        <li><strong>Tontura Extrema:</strong> Indicativo de hipotensão ou baixa perfusão.</li>
+        <li><strong>Dor Irradiada:</strong> Fisgadas que descem para a perna (ciático).</li>
+    </ul>
+
+    <h2>CHECKLIST DIÁRIO DE SUCESSO</h2>
+    <ul class="checklist">
+        <li>[ ] Puran T4 tomado em jejum absoluto?</li>
+        <li>[ ] Ingeri 30g de proteína em pelo menos 3 a 4 refeições?</li>
+        <li>[ ] Executei o treino de pernas unilateral com descida lenta?</li>
+        <li>[ ] Bebi água de forma controlada (pequenos goles)?</li>
+        <li>[ ] Fiz a mobilidade do "Gato" e evitei extensões de coluna?</li>
+        <li>[ ] Levantei devagar para evitar tonturas (efeito Entresto)?</li>
+    </ul>
+
+    <div class="footer">
+        CURA ET DISCIPLINA - AD SALUTEM - 2026
+    </div>
+</article>
 
 </body>
 </html>

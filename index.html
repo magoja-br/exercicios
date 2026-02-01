@@ -3,160 +3,36 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
-    <title>Summa Vitalis - Protocolo de Recuperação Miocárdica e Longevidade</title>
+    <title>Summa Vitalis & Consensus Core - Protocolo de Recuperação e Longevidade</title>
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Lora:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
     <style>
-        :root {
-            --parchment: #fcfaf2;
-            --ink: #1a1a1a;
-            --gold: #b8860b;
-            --crimson: #8b0000;
-            --shadow: rgba(0, 0, 0, 0.1);
-        }
-
+        :root { --parchment: #fcfaf2; --ink: #1a1a1a; --gold: #b8860b; --crimson: #8b0000; --emerald: #065f46; --shadow: rgba(0, 0, 0, 0.1); }
         * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
-
-        html, body {
-            overflow-x: hidden;
-            width: 100%;
-            margin: 0;
-            padding: 0;
-            background-color: #e5e5e5;
-        }
-
-        body {
-            color: var(--ink);
-            font-family: 'Lora', serif;
-            display: flex;
-            justify-content: center;
-        }
-
-        .manuscript {
-            background-color: var(--parchment);
-            width: 95%;
-            max-width: 900px;
-            margin: 20px auto;
-            padding: 5% 7%;
-            box-shadow: 0 10px 30px var(--shadow);
-            border: 1px solid #d3d3d3;
-            position: relative;
-            word-wrap: break-word;
-        }
-
-        .manuscript::before {
-            content: "";
-            position: absolute;
-            top: 10px; left: 10px; right: 10px; bottom: 10px;
-            border: 1px solid #e0d8c0;
-            pointer-events: none;
-        }
-
+        html, body { overflow-x: hidden; width: 100%; margin: 0; padding: 0; background-color: rgb(229, 229, 229); }
+        body { color: var(--ink); font-family: Lora, serif; display: flex; justify-content: center; }
+        .manuscript { background-color: var(--parchment); width: 95%; max-width: 900px; margin: 20px auto; padding: 5% 7%; box-shadow: 0 10px 30px var(--shadow); border: 1px solid rgb(211, 211, 211); position: relative; overflow-wrap: break-word; }
+        .manuscript::before { content: ""; position: absolute; inset: 10px; border: 1px solid rgb(224, 216, 192); pointer-events: none; }
         header { text-align: center; margin-bottom: 40px; position: relative; z-index: 1; }
-
-        h1 {
-            font-family: 'Cinzel', serif;
-            font-size: clamp(1.4rem, 4vw, 2.2rem);
-            color: var(--crimson);
-            margin-bottom: 10px;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-        }
-
-        .subtitle {
-            font-family: 'Playfair Display', serif;
-            font-style: italic;
-            font-size: clamp(0.9rem, 3vw, 1.1rem);
-            color: var(--gold);
-            margin-bottom: 20px;
-            font-weight: bold;
-        }
-
-        .dropcap {
-            float: left;
-            font-family: 'Cinzel', serif;
-            font-size: 4rem;
-            line-height: 0.8;
-            padding-top: 10px;
-            padding-right: 10px;
-            color: var(--crimson);
-        }
-
-        h2 {
-            font-family: 'Cinzel', serif;
-            font-size: clamp(1.1rem, 4vw, 1.4rem);
-            border-bottom: 2px solid var(--gold);
-            padding-bottom: 10px;
-            margin-top: 40px;
-            color: var(--crimson);
-            text-align: center;
-            text-transform: uppercase;
-        }
-
-        h3 {
-            font-family: 'Playfair Display', serif;
-            color: var(--crimson);
-            margin-top: 30px;
-            font-size: clamp(1rem, 3.5vw, 1.25rem);
-            font-weight: bold;
-        }
-
-        h4 {
-            font-family: 'Cinzel', serif;
-            color: var(--ink);
-            margin-top: 20px;
-            font-size: 1rem;
-            border-left: 3px solid var(--gold);
-            padding-left: 10px;
-        }
-
-        p {
-            font-size: clamp(1rem, 2.5vw, 1.1rem);
-            line-height: 1.8;
-            text-align: justify;
-            margin-bottom: 20px;
-            hyphens: auto;
-        }
-
+        h1 { font-family: Cinzel, serif; font-size: clamp(1.4rem, 4vw, 2.2rem); color: var(--crimson); margin-bottom: 10px; letter-spacing: 2px; text-transform: uppercase; }
+        .subtitle { font-family: "Playfair Display", serif; font-style: italic; font-size: clamp(0.9rem, 3vw, 1.1rem); color: var(--gold); margin-bottom: 20px; font-weight: bold; }
+        .dropcap { float: left; font-family: Cinzel, serif; font-size: 4rem; line-height: 0.8; padding-top: 10px; padding-right: 10px; color: var(--crimson); }
+        h2 { font-family: Cinzel, serif; font-size: clamp(1.1rem, 4vw, 1.4rem); border-bottom: 2px solid var(--gold); padding-bottom: 10px; margin-top: 40px; color: var(--crimson); text-align: center; text-transform: uppercase; }
+        h3 { font-family: "Playfair Display", serif; color: var(--crimson); margin-top: 30px; font-size: clamp(1rem, 3.5vw, 1.25rem); font-weight: bold; }
+        h4 { font-family: Cinzel, serif; color: var(--ink); margin-top: 20px; font-size: 1rem; border-left: 3px solid var(--gold); padding-left: 10px; }
+        p { font-size: clamp(1rem, 2.5vw, 1.1rem); line-height: 1.8; text-align: justify; margin-bottom: 20px; hyphens: auto; }
         ul { margin-bottom: 20px; padding-left: 20px; }
         li { margin-bottom: 12px; line-height: 1.6; list-style-type: square; }
         strong { color: var(--crimson); }
-
-        .callout {
-            background-color: rgba(184, 134, 11, 0.1);
-            border: 1px solid var(--gold);
-            padding: 20px;
-            margin: 20px 0;
-            font-style: italic;
-            border-radius: 5px;
-        }
-
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin: 20px 0;
-            font-size: 0.9rem;
-        }
-
-        th, td { border: 1px solid #d3d3d3; padding: 12px; text-align: left; }
-        th { background-color: #f2f2f2; font-family: 'Cinzel', serif; color: var(--crimson); }
-
-        .checklist { list-style: none; padding-left: 0; }
-        .checklist li { border-bottom: 1px dashed var(--gold); padding: 10px 0; }
-
-        .footer {
-            margin-top: 60px;
-            text-align: center;
-            font-family: 'Cinzel', serif;
-            font-size: 0.8rem;
-            color: #999;
-            letter-spacing: 3px;
-            padding-bottom: 20px;
-        }
-
-        @media (max-width: 480px) {
-            .manuscript { padding: 40px 20px; }
-            .dropcap { font-size: 3rem; }
-        }
+        .callout { background-color: rgba(184, 134, 11, 0.1); border: 1px solid var(--gold); padding: 20px; margin: 20px 0px; font-style: italic; border-radius: 5px; }
+        .consensus-section { background-color: rgba(6, 95, 70, 0.05); border: 1.5px solid var(--emerald); padding: 20px; margin: 25px 0px; border-radius: 8px; }
+        .consensus-section h2 { color: var(--emerald); border-bottom-color: var(--emerald); }
+        .exercise-detail { background: rgba(0,0,0,0.02); padding: 15px; border-radius: 5px; margin-top: 10px; border-left: 2px solid var(--gold); }
+        table { width: 100%; border-collapse: collapse; margin: 20px 0px; font-size: 0.9rem; }
+        th, td { border: 1px solid rgb(211, 211, 211); padding: 12px; text-align: left; }
+        th { background-color: rgb(242, 242, 242); font-family: Cinzel, serif; color: var(--crimson); }
+        .checklist { list-style: none; padding-left: 0px; }
+        .checklist li { border-bottom: 1px dashed var(--gold); padding: 10px 0px; }
+        .footer { margin-top: 60px; text-align: center; font-family: Cinzel, serif; font-size: 0.8rem; color: rgb(153, 153, 153); letter-spacing: 3px; padding-bottom: 20px; }
     </style>
 </head>
 <body>
@@ -187,31 +63,63 @@
         <li><strong>Hidratação:</strong> Beba pequenos goles durante o treino para manter a boca úmida, sem exceder a cota diária total recomendada.</li>
     </ul>
 
+    <div class="consensus-section">
+        <h2>CONSENSUS CORE: ORIENTAÇÕES COMPLEMENTARES</h2>
+        <p>Diretrizes integradas para IC compensada e estabilidade postural devido à inclinação lateral e dor lombar.</p>
+        
+        <h4>Ativação Muscular Profunda (Transverso do Abdômen)</h4>
+        <div class="exercise-detail">
+            <strong>Execução:</strong> Deitado ou sentado, expire o ar suavemente e puxe o umbigo para dentro, em direção à coluna vertebral, sem prender a respiração. Mantenha essa "cinta natural" acionada por 10 segundos. Repita 10 vezes. Este é o fundamento para estabilizar o tronco antes de qualquer levantamento ou esforço.
+        </div>
+
+        <h4>Bird-Dog Adaptado (Estabilidade em 4 Apoios)</h4>
+        <div class="exercise-detail">
+            <strong>Execução:</strong> Apoie mãos e joelhos no chão (coluna reta). Estenda um braço à frente e, se possível, a perna oposta para trás simultaneamente. Mantenha por 5 segundos focando em não deixar o corpo pender para a direita. Se houver desequilíbrio, estenda apenas um membro de cada vez.
+        </div>
+
+        <h4>Treino de Equilíbrio Unipodal (Ancoragem)</h4>
+        <div class="exercise-detail">
+            <strong>Execução:</strong> Em pé, próximo a um apoio fixo (parede ou cadeira), tire um pé do chão e mantenha-se em uma perna só por 15 a 30 segundos. Foque em manter o tronco ereto e centralizado. Alterne os lados. Isso corrige a dependência visual e a inclinação postural.
+        </div>
+    </div>
+
     <h2>MÓDULO II: GUIA DE EXERCÍCIOS (A "SEGUNDA BOMBA")</h2>
     <p>Com FE de 38-42%, o exercício é um "segundo remédio". Músculos fortes facilitam o retorno venoso e diminuem o esforço do coração.</p>
 
     <h3>2.1. Membros Inferiores (Trabalho Unilateral)</h3>
     <p><em>Regra de Ouro: Trabalhar uma perna de cada vez para evitar sobrecarga cardíaca súbita.</em></p>
-    
+
     <h4>Extensão de Joelhos (Cadeira Extensora)</h4>
-    <p>Sentado, estenda uma perna até alinhar, segure 2s e desça lentamente. O modo mais seguro de isolar o quadríceps sem pressão abdominal.</p>
+    <div class="exercise-detail">
+        <strong>Execução:</strong> Sentado com as costas bem apoiadas, estenda uma perna até que ela fique alinhada horizontalmente. Segure a contração máxima por 2 segundos e retorne o peso de forma extremamente controlada, contando 4 segundos na descida. Realize o número total de repetições com uma perna antes de alternar.
+    </div>
 
     <h4>Agachamento Parcial (Sentar e Levantar)</h4>
-    <p>Utilize uma cadeira alta. Desça lentamente até encostar e suba imediatamente. Essencial para autonomia diária.</p>
+    <div class="exercise-detail">
+        <strong>Execução:</strong> Utilize uma cadeira alta. Com os pés firmes no chão, desça o quadril lentamente até apenas tocar o assento. Suba imediatamente usando a força das coxas, mantendo o abdômen contraído (manobra de bracing) para proteger a lombar e evitar inclinação.
+    </div>
 
     <h4>Elevação de Panturrilha (Bomba de Sóleo)</h4>
-    <p>Em pé, apoiado, suba na ponta dos pés. Crucial para o retorno venoso e redução de inchaço.</p>
+    <div class="exercise-detail">
+        <strong>Execução:</strong> Em pé, apoiado em algo firme para segurança, suba na ponta dos pés o máximo que puder, sentindo a contração na batata da perna. Desça lentamente. Este exercício é vital para o retorno venoso e para reduzir o inchaço nos tornozelos.
+    </div>
 
     <h3>2.2. Membros Superiores (Autonomia e Postura)</h3>
-    
+
     <h4>Bíceps com Halteres</h4>
-    <p>Realize <strong>sentado</strong> para estabilidade da pressão, um braço de cada vez.</p>
+    <div class="exercise-detail">
+        <strong>Execução:</strong> Realize <strong>sempre sentado</strong>. Com um halter em cada mão, flexione um braço de cada vez trazendo o peso em direção ao ombro. Mantenha o cotovelo colado ao tronco. A alternância dos braços evita picos de pressão arterial.
+    </div>
 
     <h4>Desenvolvimento Lateral (Limitado)</h4>
-    <p>Eleve os braços apenas até a altura dos ombros. <strong>Jamais eleve pesos acima da linha da cabeça</strong>, pois isso aumenta drasticamente a carga sobre o coração.</p>
+    <div class="exercise-detail">
+        <strong>Execução:</strong> Eleve os halteres lateralmente até a altura dos ombros. <strong>Nunca ultrapasse a linha da cabeça.</strong> Mantenha os joelhos levemente flexionados para estabilizar a coluna.
+    </div>
 
     <h4>Puxada/Remada com Elástico</h4>
-    <p>Puxe em direção ao abdômen fechando as escápulas. Melhora a postura e auxilia na expansão pulmonar.</p>
+    <div class="exercise-detail">
+        <strong>Execução:</strong> Fixe o elástico à sua frente (altura do peito). Sentado ou em pé, puxe o elástico em direção ao abdômen, focando em "esmagar" as escápulas atrás. Mantenha os ombros longe das orelhas. Melhora a postura e auxilia na expansão pulmonar.
+    </div>
 
     <h2>MÓDULO III: A "FÓRMULA" DE EXECUÇÃO</h2>
     <ul>
@@ -226,7 +134,7 @@
     <ul>
         <li><strong>A Regra da Não-Extensão:</strong> Evite movimentos que "arqueiem" a lombar para trás (ex: olhar excessivamente para cima ou nado crawl).</li>
         <li><strong>Manobra de Bracing:</strong> Contraia levemente o abdômen ("travar o core") antes de qualquer esforço.</li>
-        <li><strong>Mobilidade do Gato:</strong> Realize ao despertar para lubrificar as articulações e aliviar a rigidez.</li>
+        <li><strong>Mobilidade do Gato:</strong> Realize ao despertar para lubrificar as articulações e aliviar a rigidez. Em 4 apoios, arqueie a coluna para cima e depois retorne à posição neutra.</li>
     </ul>
 
     <h3>4.2. Contraindicações Críticas</h3>
@@ -234,33 +142,19 @@
         <li><strong>Isometria Longa:</strong> Proibido pranchas ou segurar pesos parados; isso eleva a pressão arterial rapidamente.</li>
         <li><strong>Manobra de Valsalva:</strong> <strong>Nunca prenda a respiração</strong>. Expire na fase de força.</li>
         <li><strong>Caminhadas em Subidas:</strong> Exigem muito débito cardíaco. Prefira plano ou treino de força.</li>
+        <li><strong>Flexão Brusca de Tronco:</strong> Devido à limitação física (mãos atingem apenas joelhos), não force alongamentos bruscos para baixo.</li>
     </ul>
 
     <h2>MÓDULO V: FARMACOLOGIA E ALERTAS</h2>
     <table>
         <thead>
-            <tr>
-                <th>Medicamento</th>
-                <th>Observação no Treino</th>
-            </tr>
+            <tr><th>Medicamento</th><th>Observação no Treino</th></tr>
         </thead>
         <tbody>
-            <tr>
-                <td><strong>Metoprolol</strong></td>
-                <td>Trava os batimentos. Use o cansaço (Escala de Fala) como guia, não a frequência.</td>
-            </tr>
-            <tr>
-                <td><strong>Entresto / Anlodipino</strong></td>
-                <td>Risco de queda de pressão. Levante-se devagar; aguarde 1 minuto após deitar.</td>
-            </tr>
-            <tr>
-                <td><strong>Diazepam / Quetiapina</strong></td>
-                <td>Afetam o equilíbrio. Treine sempre próximo a apoios fixos.</td>
-            </tr>
-            <tr>
-                <td><strong>Puran T4</strong></td>
-                <td>Deve ser a primeira ação do dia, estritamente em jejum.</td>
-            </tr>
+            <tr><td><strong>Metoprolol</strong></td><td>Trava os batimentos. Use o cansaço (Escala de Fala) como guia, não a frequência.</td></tr>
+            <tr><td><strong>Entresto / Anlodipino</strong></td><td>Risco de queda de pressão. Levante-se devagar; aguarde 1 minuto após deitar.</td></tr>
+            <tr><td><strong>Diazepam / Quetiapina</strong></td><td>Afetam o equilíbrio. Treine sempre próximo a apoios fixos.</td></tr>
+            <tr><td><strong>Puran T4</strong></td><td>Deve ser a primeira ação do dia, estritamente em jejum.</td></tr>
         </tbody>
     </table>
 
@@ -268,13 +162,14 @@
     <ul>
         <li><strong>Peso Súbito:</strong> Ganho de 2kg em 48h (sinal de acúmulo de líquido).</li>
         <li><strong>Tontura Extrema:</strong> Indicativo de hipotensão ou baixa perfusão.</li>
-        <li><strong>Dor Irradiada:</strong> Fisgadas que descem para a perna (ciático).</li>
+        <li><strong>Dor Irradiada:</strong> Fisgadas que descem para a perna (ciático) ou piora súbita da dor lombar.</li>
     </ul>
 
     <h2>CHECKLIST DIÁRIO DE SUCESSO</h2>
     <ul class="checklist">
         <li>[ ] Puran T4 tomado em jejum absoluto?</li>
         <li>[ ] Ingeri 30g de proteína em pelo menos 3 a 4 refeições?</li>
+        <li>[ ] Realizei a ativação do Transverso do Abdômen (10x10s)?</li>
         <li>[ ] Executei o treino de pernas unilateral com descida lenta?</li>
         <li>[ ] Bebi água de forma controlada (pequenos goles)?</li>
         <li>[ ] Fiz a mobilidade do "Gato" e evitei extensões de coluna?</li>
@@ -282,7 +177,7 @@
     </ul>
 
     <div class="footer">
-        CURA ET DISCIPLINA - AD SALUTEM - 2026
+        CURA ET DISCIPLINA - SUMMA VITALIS & CONSENSUS CORE - 2026
     </div>
 </article>
 
